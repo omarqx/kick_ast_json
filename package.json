@@ -25,14 +25,14 @@
   "homepage": "https://github.com/omarqx/kick_ast_json#readme",
   "devDependencies": {
     "@types/jest": "^23.3.9",
+    "@types/lodash": "^4.14.117",
+    "@types/node": "^10.12.2",
     "jest": "^23.6.0",
     "ts-jest": "^23.10.4",
     "typedoc": "^0.13.0",
     "typescript": "^3.1.6"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.117",
-    "@types/node": "^10.12.2",
     "lodash": "^4.17.11"
   }
 }
