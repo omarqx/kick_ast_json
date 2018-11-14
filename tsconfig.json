@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "types" : ["node", "lodash", "jest"],
+        "outDir": "dist",
+        "target": "es6"
+    },
+    "include": [
+        "index.ts",
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.test.ts",
+        "**/*.spec.ts"
+    ]
+}

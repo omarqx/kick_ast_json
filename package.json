@@ -1,0 +1,38 @@
+{
+  "name": "kick_ast_json",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/jest",
+    "build": "tsc",
+    "doc": "node_modules/.bin/typedoc --out ./documentation/ ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omarqx/kick_ast_json.git"
+  },
+  "keywords": [
+    "ast",
+    "json",
+    "parser"
+  ],
+  "author": "omar qaddoumi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omarqx/kick_ast_json/issues"
+  },
+  "homepage": "https://github.com/omarqx/kick_ast_json#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.4",
+    "typedoc": "^0.13.0",
+    "typescript": "^3.1.6"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.117",
+    "@types/node": "^10.12.2",
+    "lodash": "^4.17.11"
+  }
+}

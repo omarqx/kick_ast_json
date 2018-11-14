@@ -1,0 +1,650 @@
+{
+    "version": "1.1",
+    "description": "GCT Click Event",
+    "aggregationType": "regular",
+    "eventName": "GCT_Click",
+    "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "required": [
+            "sieDataSource",
+            "sieEvent"
+        ],
+        "properties": {
+            "sieDataSource": {
+                "type": "string",
+                "description": "origin of the data"
+            },
+            "sieEvent": {
+                "type": "string",
+                "description": "account event name"
+            },
+            "name": {
+                "type": "string",
+                "description": "a GCT generated name for event"
+            },
+            "gctEventType": {
+                "type": "string",
+                "description": "GCT version used"
+            },
+            "gctVersion": {
+                "type": "string",
+                "description": "GCT version used"
+            },
+            "userAgent": {
+                "type": "string",
+                "description": "user agent used (browser or RNPS assigned agaent)"
+            },
+            "platformPrivacyWs1": {
+                "type": "string",
+                "description": "(env) Capture permission setting of the account, set (minimal, all and exempt) it could also be undefined"
+            },
+            "locale": {
+                "type": "string",
+                "description": "(env) Capture PSN account language"
+            },
+            "deviceId": {
+                "type": "string",
+                "description": "(env) Capture unique device ID"
+            },
+            "visitorId": {
+                "type": "string",
+                "description": "(env) The hashed PSN account ID which can be retrieved from Session API or account ID API"
+            },
+            "appName": {
+                "type": "string",
+                "description": "(env) Capture app name"
+            },
+            "buildVersion": {
+                "type": "string",
+                "description": "(env) Capture application build version"
+            },
+            "deviceType": {
+                "type": "string",
+                "description": "(env) Capture device type, set includes (PS3, PS4, web, etc.)"
+            },
+            "charset": {
+                "type": "string",
+                "description": "(env) Capture character encoding"
+            },
+            "signedIn": {
+                "type": "boolean",
+                "description": "(env) if user is signed in"
+            },
+            "plusUserType": {
+                "type": "string",
+                "description": "(env) identify type of membership, set (free trial, subscription, lapsed, never subscribed)"
+            },
+            "isPlusUser": {
+                "type": "boolean",
+                "description": "(env) if the user is a plus user."
+            },
+            "userAge": {
+                "type": "integer",
+                "description": "(env) Capture age of the user"
+            },
+            "zipcode": {
+                "type": "integer",
+                "description": "(env) Capture zipcode, Deprecated in favour of postalCode"
+            },
+            "postalCode": {
+                "type": "string",
+                "description": "(env) Capture postal code"
+            },
+            "DMA": {
+                "type": "string",
+                "description": "(env) Designated Market Area"
+            },
+            "networkType": {
+                "type": "string",
+                "description": "(env) Capture network type, set (wifi, wired, cell lte, cell 3G)"
+            },
+            "screenInfo": {
+                "type": "string",
+                "description": "(env) Capture screen resolution or DPI"
+            },
+            "platformVersion": {
+                "type": "string",
+                "description": "(env) Capture platform version, Example (vsh 4.55)"
+            },
+            "psnowMembershipType": {
+                "type": "string",
+                "description": "(env) Capture PS Now Membership type, set (trial, subscription, not subscribed)"
+            },
+            "deeplink": {
+                "type": "string",
+                "description": "deeplink to the location of the event (deeplink or app route)"
+            },
+            "location": {
+                "type": "string",
+                "description": "location of the event in colon separated format (LATFORM:APP:PAGE:SECTION:SUBSECTIO:...:...)"
+            },
+            "locationType": {
+                "type": "string",
+                "description": "Location type indicate the kind of location of the event"
+            },
+            "relatedContent": {
+                "type": "array",
+                "description": "List of content related to this event (this might go away since it'll be removed in PSI-18)",
+                "items": {
+                    "description": "The partnerOffer object",
+                    "type": "object",
+                    "properties": {
+                        "campaignId": {
+                            "type": "string",
+                            "description": "Campaign ID associated with the tile"
+                        },
+                        "clickType": {
+                            "type": "string",
+                            "description": "Indicate the type of click on tile"
+                        },
+                        "griefReportItem": {
+                            "type": "integer",
+                            "description": "the target item which the grief report submitted for"
+                        },
+                        "griefReportReason": {
+                            "type": "string",
+                            "description": "the reason griefReportItem got reported"
+                        },
+                        "hasAttachment": {
+                            "type": "boolean",
+                            "description": "if the tile contains an attachment"
+                        },
+                        "hasSticker": {
+                            "type": "boolean",
+                            "description": "indicate if message has sticker"
+                        },
+                        "productTitle": {
+                            "type": "string",
+                            "description": "the tile product title"
+                        },
+                        "rating": {
+                            "type": "integer",
+                            "description": "rating of the product in the tile"
+                        },
+                        "recommendationSrc": {
+                            "type": "string",
+                            "description": "the source of the recommendation for this tile"
+                        },
+                        "searchTerm": {
+                            "type": "string",
+                            "description": "if the tile triggered a search and to capture associated search term"
+                        },
+                        "uiElementType": {
+                            "type": "string",
+                            "description": "this element type of the content"
+                        },
+                        "uiElementPosition": {
+                            "type": "integer",
+                            "description": "the order of the element"
+                        }
+                    }
+                }
+            },
+            "time": {
+                "type": "string",
+                "format": "date-time",
+                "description": "time of the event"
+            },
+            "type": {
+                "type": "string",
+                "description": "Type of thrower (app or page)"
+            },
+            "url": {
+                "type": "string",
+                "description": "Url of the page or app where the error happened"
+            },
+            "sessionId": {
+                "type": "string",
+                "description": "Session Id is used as a replacement for the Hashed PSN Id representing a Visit."
+            },
+            "shortTermId": {
+                "type": "string",
+                "description": "transient id used for engineering purposes"
+            },
+            "allowAdditionalData": {
+                "type": "boolean",
+                "description": "indicate if additional data gathering is allowed"
+            },
+            "allowPersonalizedRecs": {
+                "type": "boolean",
+                "description": "Indicate if tracking personalized purchase recommendations is allowed"
+            },
+            "allowPersonalizedAds": {
+                "type": "boolean",
+                "description": "Indicate if tracking personalized advertising is allowed"
+            },
+            "banner": {
+                "type": "string",
+                "description": "banner id to capture banner information with the click"
+            },
+            "clickType": {
+                "type": "string",
+                "description": "Indicate the type of click"
+            },
+            "clickLocation": {
+                "type": "string",
+                "description": "location of the click if multiple locations are possible on screen"
+            },
+            "clickMetadata": {
+                "type": "string",
+                "description": "metadata information about the click event"
+            },
+            "contentDetail": {
+                "type": "string",
+                "description": "content detail"
+            },
+            "displayPrice": {
+                "type": "string",
+                "description": "product display price if the click is related to a product"
+            },
+            "downloadClick": {
+                "type": "boolean",
+                "description": "Indicate the type of the link to be download (linkType in adobe d)"
+            },
+            "exitClick": {
+                "type": "boolean",
+                "description": "Indicate the type of the link to be exit (linkType in adobe e)"
+            },
+            "findingMethod": {
+                "type": "string",
+                "description": "Which method was used to find the content clicked"
+            },
+            "formAction": {
+                "type": "string",
+                "description": "Form action if the click includes a form event"
+            },
+            "formLocation": {
+                "type": "string",
+                "description": "Form action if the click includes a form event"
+            },
+            "griefReportItem": {
+                "type": "string",
+                "description": "the target item which the grief report submitted for"
+            },
+            "griefReportReason": {
+                "type": "string",
+                "description": "the reason griefReportItem got reported"
+            },
+            "genre": {
+                "type": "string",
+                "description": "product genre if the click is related to a product"
+            },
+            "hasAttachment": {
+                "type": "boolean",
+                "description": "if the message contains an attachment"
+            },
+            "hasColorChanged": {
+                "type": "boolean",
+                "description": "if profile changed background color"
+            },
+            "hasImage": {
+                "type": "boolean",
+                "description": "if user attaches image to post in Post Anything to Whats New"
+            },
+            "hasImageChanged": {
+                "type": "boolean",
+                "description": "if profile changed background image"
+            },
+            "hasGameTagged": {
+                "type": "boolean",
+                "description": "User tags game to post in Post Anything to Whats New"
+            },
+            "hasPlayersTagged": {
+                "type": "integer",
+                "description": "User tags one or more friends followers to post in Post Anything to Whats New"
+            },
+            "hasPlayersInvited": {
+                "type": "integer",
+                "description": "Tracks total team invitations sent"
+            },
+            "hasSticker": {
+                "type": "boolean",
+                "description": "Number of times a user sends a sticker within a message"
+            },
+            "httpReferrer": {
+                "type": "string",
+                "description": "override document referrer"
+            },
+            "isPlaytimeUnlimited": {
+                "type": "boolean",
+                "description": "indicate if the playtime is set to unlimited"
+            },
+            "maturity": {
+                "type": "string",
+                "description": "product maturity if the click is related to a product"
+            },
+            "merchCategory": {
+                "type": "string",
+                "description": "Merchandise category"
+            },
+            "networkName": {
+                "type": "string",
+                "description": "capture the network or channel name"
+            },
+            "playerId": {
+                "type": "string",
+                "description": "capture the video player ID or name"
+            },
+            "playtimeAgeGroup": {
+                "type": "string",
+                "description": "Indicate to which age group playtime limit is being apply, there are 4 age groups from 0 to 3"
+            },
+            "playtimeDurationChange": {
+                "type": "integer",
+                "description": "settings for the number of minutes change for playtime"
+            },
+            "productClassification1": {
+                "type": "string",
+                "description": "product classification 1 from the product catalog of the product"
+            },
+            "productClassification2": {
+                "type": "string",
+                "description": "product classification 2 from the product catalog of the product"
+            },
+            "productClassification3": {
+                "type": "string",
+                "description": "product classification 3 from the product catalog of the product"
+            },
+            "productName": {
+                "type": "string",
+                "description": "product name if the click is related to a product"
+            },
+            "productSku": {
+                "type": "string",
+                "description": "product sku if the click is related to a product"
+            },
+            "publisher": {
+                "type": "string",
+                "description": "product publisher if the click is related to a product"
+            },
+            "ratingNumber": {
+                "type": "integer",
+                "description": "Submit of a rating number "
+            },
+            "recCampaign": {
+                "type": "string",
+                "description": "Recommendation Campaign ID"
+            },
+            "recommendation": {
+                "type": "object",
+                "description": "Recommendation information submitted",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Product receiving the recommendation"
+                    },
+                    "sku": {
+                        "type": "string",
+                        "description": "stock keeping unit"
+                    }
+                }
+            },
+            "recommendationSrc": {
+                "type": "string",
+                "description": "Collects the social media network and the thing being socialized"
+            },
+            "releaseDate": {
+                "type": "string",
+                "description": "product release date if the click is related to a product"
+            },
+            "searchFilter": {
+                "type": "array",
+                "description": "when click trigger a search capture associated search filter",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "searchTerm": {
+                "type": "string",
+                "description": "when click trigger a search capture associated search term"
+            },
+            "sortOrder": {
+                "type": "array",
+                "description": "when click trigger a sort capture the associater sort order",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "streamType": {
+                "type": "string",
+                "description": "Indicate the type of video stream"
+            },
+            "tile": {
+                "type": "object",
+                "description": "Contain information of the captured tile",
+                "properties": {
+                    "campaignId": {
+                        "type": "string",
+                        "description": "Campaign ID associated with the tile"
+                    },
+                    "ctaType": {
+                        "type": "string",
+                        "description": "Indicate the type of click on tile"
+                    },
+                    "productTitle": {
+                        "type": "string",
+                        "description": "the product title"
+                    },
+                    "sponsored": {
+                        "type": "boolean",
+                        "description": "Indicate if the tile is sponsored ad"
+                    },
+                    "tileAuthor": {
+                        "type": "string",
+                        "description": "the author of the tile"
+                    },
+                    "tileCaption": {
+                        "type": "string",
+                        "description": "the caption of the tile"
+                    },
+                    "tileId": {
+                        "type": "string",
+                        "description": "Unique identifier of the tile"
+                    },
+                    "tileLanguage": {
+                        "type": "string",
+                        "description": "the content language of the tile"
+                    },
+                    "tileTitle": {
+                        "type": "string",
+                        "description": "the title of the tile"
+                    },
+                    "tileTrackingId": {
+                        "type": "string",
+                        "description": "Secondary unique identifier of the tile"
+                    },
+                    "tileType": {
+                        "type": "string",
+                        "description": "the type of the tile, set includes (broadcast, live, etc.)"
+                    },
+                    "tilePosition": {
+                        "type": "integer",
+                        "description": "the order of the tile"
+                    }
+                }
+            },
+            "tiles": {
+                "type": "array",
+                "description": "allow multiple tiles to be captured at the same time",
+                "items": {
+                    "description": "The partnerOffer object",
+                    "type": "object",
+                    "properties": {
+                        "properties": {
+                            "campaignId": {
+                                "type": "string",
+                                "description": "Campaign ID associated with the tile"
+                            },
+                            "ctaType": {
+                                "type": "string",
+                                "description": "Indicate the type of click on tile"
+                            },
+                            "productTitle": {
+                                "type": "string",
+                                "description": "the product title"
+                            },
+                            "sponsored": {
+                                "type": "boolean",
+                                "description": "Indicate if the tile is sponsored ad"
+                            },
+                            "tileAuthor": {
+                                "type": "string",
+                                "description": "the author of the tile"
+                            },
+                            "tileCaption": {
+                                "type": "string",
+                                "description": "the caption of the tile"
+                            },
+                            "tileId": {
+                                "type": "string",
+                                "description": "Unique identifier of the tile"
+                            },
+                            "tileLanguage": {
+                                "type": "string",
+                                "description": "the content language of the tile"
+                            },
+                            "tileTitle": {
+                                "type": "string",
+                                "description": "the title of the tile"
+                            },
+                            "tileTrackingId": {
+                                "type": "string",
+                                "description": "Secondary unique identifier of the tile"
+                            },
+                            "tileType": {
+                                "type": "string",
+                                "description": "the type of the tile, set includes (broadcast, live, etc.)"
+                            },
+                            "tilePosition": {
+                                "type": "integer",
+                                "description": "the order of the tile"
+                            }
+                        }
+                    }
+                }
+            },
+            "transaction": {
+                "type": "object",
+                "description": "Contain information on purchase transaction including a list of products",
+                "properties": {
+                    "currencyCode": {
+                        "type": "string",
+                        "description": "Currency code of transaction"
+                    },
+                    "paymentMethod": {
+                        "type": "string",
+                        "description": "the type of payment type used in transaction, set includes (visa, master)"
+                    },
+                    "purchaseID": {
+                        "type": "string"
+                    },
+                    "transactionID": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "useWallet": {
+                        "type": "boolean"
+                    },
+                    "products": {
+                        "type": "array",
+                        "items": {
+                            "description": "The partnerOffer object",
+                            "type": "object",
+                            "properties": {
+                                "findingMethod": {
+                                    "type": "string",
+                                    "description": "Which method was used to find the content clicked"
+                                },
+                                "merchCategory": {
+                                    "type": "string",
+                                    "description": "Merchandise category"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "Product name"
+                                },
+                                "pstpCampaign": {
+                                    "type": "string",
+                                    "description": "Promotional Strike-Through Pricing Campaign: Reward, (campaign, spring sale, reward, amount off, etc. )"
+                                },
+                                "quantity": {
+                                    "type": "integer",
+                                    "description": "quantity"
+                                },
+                                "recAnchor": {
+                                    "type": "string",
+                                    "description": "Recommendation Anchor Product from which recommendations are given"
+                                },
+                                "recCampaign": {
+                                    "type": "string",
+                                    "description": "recommendation campaign name"
+                                },
+                                "totalPrice": {
+                                    "type": "number",
+                                    "description": "total price"
+                                },
+                                "totalRevenue": {
+                                    "type": "number",
+                                    "description": "total revenue"
+                                },
+                                "sku": {
+                                    "type": "string",
+                                    "description": "stock keeping unit identifier"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "videoType": {
+                "type": "string",
+                "description": "Indicate the type of video content, set includes (TV_SHOWS, MOVIES, SPORTS etc)"
+            },
+            "videoFormat": {
+                "type": "string",
+                "description": "Indicate the video format"
+            },
+            "videoId": {
+                "type": "string",
+                "description": "unique identifier of the video"
+            },
+            "videoSeasonNum": {
+                "type": "integer",
+                "description": "the season number of the video"
+            },
+            "videoTitle": {
+                "type": "string",
+                "description": "the title of the video"
+            },
+            "videoEpisodeName": {
+                "type": "string",
+                "description": "the episode name for the video"
+            },
+            "videoEpisodeNum": {
+                "type": "integer",
+                "description": "the episode number for the video"
+            },
+            "experimentData": {
+                "type": "array",
+                "description": "Indicate which experiments (A/B tests) the user is grouped in",
+                "items": {
+                    "description": "The partnerOffer object",
+                    "type": "object",
+                    "properties": {
+                        "experimentId": {
+                            "type": "string",
+                            "description": "id or unique name of the experiment"
+                        },
+                        "variantId": {
+                            "type": "string",
+                            "description": "variant of the experiment'"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
